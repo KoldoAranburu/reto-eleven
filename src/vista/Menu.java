@@ -3,6 +3,11 @@ package vista;
 public class Menu {
 	
 	public static final int SALIR = 0;
+	
+	//MENU PRINCIPAL
+	public static final int ADMIN = 1;
+	public static final int USUARIO = 2;
+	
 	//PARA MENÚ DE USUARIO
 	public static final int ELEGIR_CABALLERO = 1;
 	public static final int COMENZAR_BATALLA = 2;
