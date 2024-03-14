@@ -47,6 +47,9 @@ public class Menu {
 	public static void menuAdministrador() {
 		System.out.println(SALIR + ". SALIR.");
 		System.out.println(ADMINISTRAR_CABALLEROS + ". ADMINISTRAR CABALLEROS.");
-		System.out.println(ADMINISTRAR_ESCUDOS + ". ");
+		System.out.println(ADMINISTRAR_ESCUDOS + ". ADMINISTRAR ESCUDOS.");
+		System.out.println(ADMINISTRAR_ARMAS + "ADMINISTRAR ARMAS.");
+		System.out.println(ADMINISTRAR_CABALLOS+ "ADM");
+		System.out.println(ADMINISTRAR_ESCUDEROS + "ADMINISTRAR ESCUDEROS.");
 	}
 }
