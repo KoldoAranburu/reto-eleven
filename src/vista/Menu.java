@@ -5,12 +5,12 @@ public class Menu {
 	public static final int SALIR = 0;
 	
 	//MENU PRINCIPAL
-	public static final int ADMIN = 1;
-	public static final int USUARIO = 2;
+	public static final int ADMIN = 2;
+	public static final int USUARIO = 1;
 	
 	//PARA MENÚ DE USUARIO
 	public static final int ELEGIR_CABALLERO = 1;
-	public static final int COMENZAR_BATALLA = 2;
+	public static final int INICIAR_JUEGO = 1;
 	
 	//PARA MENÚ DE ADMINISTRADOR
 	public static final int ADMINISTRAR_CABALLEROS = 1;
@@ -48,11 +48,11 @@ public class Menu {
 	
 	public static void menuUsuario() {
 		System.out.println(SALIR + ". SALIR.");
-		System.out.println(ELEGIR_CABALLERO + ". ELEGIR CABALLERO.");
+		System.out.println(INICIAR_JUEGO + ". INICIAR JUEGO.");
 	}
 	public static void menuBatallaUsuario() {
 		System.out.println(SALIR + ". SALIR.");
-		System.out.println(COMENZAR_BATALLA + ". COMENZAR BATALLA.");
+		System.out.println(ELEGIR_CABALLERO + ". SELECCIONE UN CABALLERO.");
 	}
 	public static void menuAdministrador() {
 		System.out.println(SALIR + ". SALIR.");
