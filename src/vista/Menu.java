@@ -41,7 +41,9 @@ public class Menu {
 	public static final int ELIMINAR_ESCUDERO = 3;
 	
 	public static void menuPrincipal() {
-		
+		System.out.println(SALIR + ". SALIR.");
+		System.out.println(USUARIO + ". ACCEDER COMO USUARIO.");
+		System.out.println(ADMIN + ". ACCEDER COMO ADMINISTRADOR.");
 	}
 	
 	public static void menuUsuario() {
@@ -72,6 +74,23 @@ public class Menu {
 		System.out.println(MODIFICAR_ESCUDO + ". MODIFICAR ESCUDO.");
 		System.out.println(ELIMINAR_ESCUDO + ". ELIMINAR ESCUDO.");
 	}
-	
+	public static void menuCrudCaballo() {
+		System.out.println(SALIR + ". SALIR.");
+		System.out.println(CREAR_CABALLO + ". CREAR CABALLO.");
+		System.out.println(MODIFICAR_CABALLO + ". MODIFICAR CABALLO.");
+		System.out.println(ELIMINAR_CABALLO + ". ELIMINAR CABALLO.");
+	}
+	public static void menuCrudArma() {
+		System.out.println(SALIR + ". SALIR.");
+		System.out.println(CREAR_ARMA + ". CREAR ARMA.");
+		System.out.println(MODIFICAR_ARMA + ". MODIFICAR ARMA.");
+		System.out.println(ELIMINAR_ARMA + ". ELIMINAR ARMA.");
+	}
+	public static void menuCrudEscudero() {
+		System.out.println(SALIR + ". SALIR.");
+		System.out.println(CREAR_ESCUDERO + ". CREAR ESCUDERO.");
+		System.out.println(MODIFICAR_ESCUDERO + ". MODIFICAR ESCUDERO.");
+		System.out.println(ELIMINAR_ESCUDERO + ". ELIMINAR ESCUDERO.");
+	}
 	
 }
