@@ -5,12 +5,12 @@ public class Menu {
 	public static final int SALIR = 0;
 	
 	//MENU PRINCIPAL
-	public static final int ADMIN = 1;
-	public static final int USUARIO = 2;
+	public static final int ADMIN = 2;
+	public static final int USUARIO = 1;
 	
 	//PARA MENÚ DE USUARIO
 	public static final int ELEGIR_CABALLERO = 1;
-	public static final int COMENZAR_BATALLA = 2;
+	public static final int INICIAR_JUEGO = 1;
 	
 	//PARA MENÚ DE ADMINISTRADOR
 	public static final int ADMINISTRAR_CABALLEROS = 1;
@@ -41,16 +41,18 @@ public class Menu {
 	public static final int ELIMINAR_ESCUDERO = 3;
 	
 	public static void menuPrincipal() {
-		
+		System.out.println(SALIR + ". SALIR.");
+		System.out.println(USUARIO + ". ACCEDER COMO USUARIO.");
+		System.out.println(ADMIN + ". ACCEDER COMO ADMINISTRADOR.");
 	}
 	
 	public static void menuUsuario() {
 		System.out.println(SALIR + ". SALIR.");
-		System.out.println(ELEGIR_CABALLERO + ". ELEGIR CABALLERO.");
+		System.out.println(INICIAR_JUEGO + ". INICIAR JUEGO.");
 	}
 	public static void menuBatallaUsuario() {
 		System.out.println(SALIR + ". SALIR.");
-		System.out.println(COMENZAR_BATALLA + ". COMENZAR BATALLA.");
+		System.out.println(ELEGIR_CABALLERO + ". SELECCIONE UN CABALLERO.");
 	}
 	public static void menuAdministrador() {
 		System.out.println(SALIR + ". SALIR.");
@@ -72,5 +74,24 @@ public class Menu {
 		System.out.println(MODIFICAR_ESCUDO + ". MODIFICAR ESCUDO.");
 		System.out.println(ELIMINAR_ESCUDO + ". ELIMINAR ESCUDO.");
 	}
+	public static void menuCrudCaballo() {
+		System.out.println(SALIR + ". SALIR.");
+		System.out.println(CREAR_CABALLO + ". CREAR CABALLO.");
+		System.out.println(MODIFICAR_CABALLO + ". MODIFICAR CABALLO.");
+		System.out.println(ELIMINAR_CABALLO + ". ELIMINAR CABALLO.");
+	}
+	public static void menuCrudArma() {
+		System.out.println(SALIR + ". SALIR.");
+		System.out.println(CREAR_ARMA + ". CREAR ARMA.");
+		System.out.println(MODIFICAR_ARMA + ". MODIFICAR ARMA.");
+		System.out.println(ELIMINAR_ARMA + ". ELIMINAR ARMA.");
+	}
+	public static void menuCrudEscudero() {
+		System.out.println(SALIR + ". SALIR.");
+		System.out.println(CREAR_ESCUDERO + ". CREAR ESCUDERO.");
+		System.out.println(MODIFICAR_ESCUDERO + ". MODIFICAR ESCUDERO.");
+		System.out.println(ELIMINAR_ESCUDERO + ". ELIMINAR ESCUDERO.");
+	}
+	
 	
 }
