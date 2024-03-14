@@ -11,7 +11,7 @@ public class Conector {
 	private final static String HOST = "localhost";
 	private static Connection CONEXIONBBDD = null;
 	
-	private Conector() {
+	protected Conector() {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -22,10 +22,10 @@ public class Conector {
 		}
 	}
 	
-	private Connection getConexion() {
+	public Connection conectar() {
 		return CONEXIONBBDD;
 	}
-	private void deconectar() {
+	public void deconectar() {
 		try {
 			CONEXIONBBDD.close();
 		} catch (SQLException e) {
