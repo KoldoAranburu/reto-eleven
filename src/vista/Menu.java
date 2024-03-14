@@ -59,8 +59,8 @@ public class Menu {
 		System.out.println(ADMINISTRAR_CABALLEROS + ". ADMINISTRAR CABALLEROS.");
 		System.out.println(ADMINISTRAR_ESCUDOS + ". ADMINISTRAR ESCUDOS.");
 		System.out.println(ADMINISTRAR_ARMAS + ". ADMINISTRAR ARMAS.");
-		System.out.println(ADMINISTRAR_CABALLOS+ ". ADMINISTRAR CABALLOS.");
-		System.out.println(ADMINISTRAR_ESCUDEROS + ". ADMINISTRAR ESCUDEROS.");
+		//System.out.println(ADMINISTRAR_CABALLOS+ ". ADMINISTRAR CABALLOS.");
+		//System.out.println(ADMINISTRAR_ESCUDEROS + ". ADMINISTRAR ESCUDEROS.");
 	}
 	public static void menuCrudCaballero() {
 		System.out.println(SALIR + ". SALIR.");
