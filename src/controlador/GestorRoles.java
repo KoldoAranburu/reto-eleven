@@ -25,12 +25,11 @@ public class GestorRoles {
 				System.out.println("Saliendo...");
 				break;
 			case Menu.USUARIO:
-				
+				GestorUsuario.run();
 				break;
 			case Menu.ADMIN:
 				
 				break;
-
 			default:
 				System.out.println("Opción incorrecta, intentelo de nuevo.");
 				break;
