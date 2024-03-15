@@ -26,16 +26,16 @@ public class GestorAdministrador {
 				GestorArmas.run();
 				break;
 			case Menu.ADMINISTRAR_CABALLEROS:
-				//GestorCaballeros.run();			
+				GestorCaballeros.run();			
 				break;
 			case Menu.ADMINISTRAR_CABALLOS:
-				//segundo Split
+				segundo Split
 				break;
 			case Menu.ADMINISTRAR_ESCUDEROS:
-				//segundo Split
+				segundo Split
 				break;
 			case Menu.ADMINISTRAR_ESCUDOS:
-				//GestorEscudos.run();
+				GestorEscudos.run();
 				break;
 			default:
 				System.out.println("Opción incorrecta, intentelo de nuevo.");
