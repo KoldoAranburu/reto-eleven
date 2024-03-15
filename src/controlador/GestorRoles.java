@@ -7,9 +7,7 @@ import vista.Menu;
 public class GestorRoles {
 
 	public static void main(String[] args) {
-
 		run();
-
 	}
 
 	public static void run() {
@@ -36,10 +34,13 @@ public class GestorRoles {
 			}
 			
 			
+<<<<<<< HEAD
 			
 			
 			
 			
+=======
+>>>>>>> juan
 		} while (opcion != Menu.SALIR);
 	}
 }

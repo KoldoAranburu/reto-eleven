@@ -33,6 +33,4 @@ public class GestorUsuario {
 		} while (opcion != Menu.SALIR);
 		
 	}
-	
-	
 }
