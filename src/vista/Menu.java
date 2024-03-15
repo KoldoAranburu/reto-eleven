@@ -28,9 +28,10 @@ public class Menu {
 	public static final int MODIFICAR_ESCUDO = 2;
 	public static final int ELIMINAR_ESCUDO = 3;
 	
-	public static final int CREAR_ARMA = 1;
-	public static final int MODIFICAR_ARMA = 2;
-	public static final int ELIMINAR_ARMA = 3;
+	public static final int VER_ARMAS = 1;
+	public static final int CREAR_ARMA = 2;
+	public static final int MODIFICAR_ARMA = 3;
+	public static final int ELIMINAR_ARMA = 4;
 	
 	public static final int CREAR_CABALLO = 1;
 	public static final int MODIFICAR_CABALLO = 2;
@@ -82,6 +83,7 @@ public class Menu {
 	}
 	public static void menuCrudArma() {
 		System.out.println(SALIR + ". SALIR.");
+		System.out.println(VER_ARMAS + ". VER ARMAS.");
 		System.out.println(CREAR_ARMA + ". CREAR ARMA.");
 		System.out.println(MODIFICAR_ARMA + ". MODIFICAR ARMA.");
 		System.out.println(ELIMINAR_ARMA + ". ELIMINAR ARMA.");

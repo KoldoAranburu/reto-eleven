@@ -7,9 +7,7 @@ import vista.Menu;
 public class GestorRoles {
 
 	public static void main(String[] args) {
-
 		run();
-
 	}
 
 	public static void run() {
@@ -28,14 +26,12 @@ public class GestorRoles {
 				GestorUsuario.run();
 				break;
 			case Menu.ADMIN:
-				
+				GestorAdministrador.run();
 				break;
 			default:
 				System.out.println("Opción incorrecta, intentelo de nuevo.");
 				break;
 			}
-			
-			
 			
 			
 		} while (opcion != Menu.SALIR);
