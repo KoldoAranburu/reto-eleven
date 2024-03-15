@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-03-2024 a las 10:52:42
+-- Tiempo de generación: 15-03-2024 a las 12:42:52
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `armas` (
   `ID_ARMA` int(11) NOT NULL,
   `TIPO` varchar(255) DEFAULT NULL,
-  `FUERZA_ATAQUE` varchar(255) DEFAULT NULL
+  `FUERZA_ATAQUE` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -38,20 +38,22 @@ CREATE TABLE `armas` (
 --
 
 INSERT INTO `armas` (`ID_ARMA`, `TIPO`, `FUERZA_ATAQUE`) VALUES
-(1, 'Excalibur', '95'),
-(2, 'Joyeuse', '90'),
-(3, 'Durandal', '95'),
-(4, 'Maza de bola', '90'),
-(5, 'Maza de clavo', '80'),
-(6, 'Maza de estrella', '10'),
-(7, 'Maza de cadena', '89'),
-(8, 'Lanza de justa', '80'),
-(9, 'Lanza de caballería', '10'),
-(10, 'Lanza de infantería', '89'),
-(11, 'Espada de Danma', '89'),
-(12, 'Espada de Enma', '89'),
-(13, 'Sandai Kitetsu', '95'),
-(14, 'Wado Ichimonji', '95');
+(1, 'Excalibur', 95),
+(2, 'Joyeuse', 90),
+(3, 'Durandal', 95),
+(4, 'Maza de bola', 90),
+(5, 'Maza de clavo', 80),
+(6, 'Maza de estrella', 10),
+(7, 'Maza de cadena', 89),
+(8, 'Lanza de justa', 80),
+(9, 'Lanza de caballería', 10),
+(10, 'Lanza de infantería', 89),
+(11, 'Espada de Danma', 89),
+(12, 'Espada Enma', 89),
+(13, 'Sandai Kitetsu', 95),
+(14, 'Wado Ichimonji', 95),
+(15, 'Katana Roja', 25),
+(17, 'Espadasanta', 30);
 
 -- --------------------------------------------------------
 
@@ -130,7 +132,7 @@ INSERT INTO `escuderos` (`ID_ESCUDERO`, `NOMBRE`, `APELLIDO`, `EXPERIENCIA`, `ID
 CREATE TABLE `escudos` (
   `ID_ESCUDO` int(11) NOT NULL,
   `NOMBRE` varchar(255) DEFAULT NULL,
-  `NIVEL_DEFENSA` varchar(255) DEFAULT NULL
+  `NIVEL_DEFENSA` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -138,13 +140,13 @@ CREATE TABLE `escudos` (
 --
 
 INSERT INTO `escudos` (`ID_ESCUDO`, `NOMBRE`, `NIVEL_DEFENSA`) VALUES
-(1, 'Escudo redondo', '80'),
-(2, 'Escudo de persa', '20'),
-(3, 'Escudo de romano', '80'),
-(4, 'Escudo escocés', '75'),
-(5, 'Escudo vikingo', '95'),
-(6, 'Escudo basico', '10'),
-(7, 'Escudo basico', '50');
+(1, 'Escudo redondo', 80),
+(2, 'Escudo de persa', 20),
+(3, 'Escudo de romano', 80),
+(4, 'Escudo escocés', 75),
+(5, 'Escudo vikingo', 95),
+(6, 'Escudo basico', 10),
+(7, 'Escudo basico', 50);
 
 --
 -- Índices para tablas volcadas
@@ -192,7 +194,7 @@ ALTER TABLE `escudos`
 -- AUTO_INCREMENT de la tabla `armas`
 --
 ALTER TABLE `armas`
-  MODIFY `ID_ARMA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID_ARMA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `caballeros`
