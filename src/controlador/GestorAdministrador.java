@@ -26,7 +26,7 @@ public class GestorAdministrador {
 				GestorArmas.run();
 				break;
 			case Menu.ADMINISTRAR_CABALLEROS:
-				//GestorCaballeros.run();			
+				GestorCaballeros.run();			
 				break;
 			case Menu.ADMINISTRAR_CABALLOS:
 				//segundo Split

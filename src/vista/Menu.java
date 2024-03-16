@@ -20,9 +20,10 @@ public class Menu {
 	public static final int ADMINISTRAR_ESCUDEROS = 5;
 	
 	//MENÚ DE CRUD
-	public static final int CREAR_CABALLERO = 1;
-	public static final int MODIFICAR_CABALLERO = 2;
-	public static final int ELIMINAR_CABALLERO = 3;
+	public static final int VER_CABALLERO = 1;
+	public static final int CREAR_CABALLERO = 2;
+	public static final int MODIFICAR_CABALLERO = 3;
+	public static final int ELIMINAR_CABALLERO = 4;
 	
 	public static final int CREAR_ESCUDO = 1;
 	public static final int MODIFICAR_ESCUDO = 2;
@@ -65,6 +66,8 @@ public class Menu {
 	}
 	public static void menuCrudCaballero() {
 		System.out.println(SALIR + ". SALIR.");
+		
+		System.out.println(VER_CABALLERO + ". VER CABALLEROS.");
 		System.out.println(CREAR_CABALLERO + ". CREAR CABALLERO.");
 		System.out.println(MODIFICAR_CABALLERO + ". MODIFICAR CABALLERO.");
 		System.out.println(ELIMINAR_CABALLERO + ". ELIMINAR CABALLERO.");

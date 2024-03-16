@@ -97,4 +97,24 @@ public class ArmaModelo {
 		return null;
 	}
 
+	public static ArrayList<Arma> getArmasNoAsignadas(ArrayList<Arma> armas) {
+		String sql = "SELECT * FROM armas WHERE armas.ID_ARMA NOT IN (SELECT a.ID_ARMA FROM armas A JOIN caballeros B ON A.ID_ARMA=b.ID_ARMA);";
+		try {
+			Conector conector = new Conector();
+			PreparedStatement prst = conector.conectar().prepareStatement(sql);
+			ResultSet rst = prst.executeQuery();
+			while(rst.next()) {
+				Arma arma = new Arma();
+				arma.setFuerza_ataque(rst.getInt("FUERZA_ATAQUE"));
+				arma.setId_arma(rst.getInt("ID_ARMA"));
+				arma.setTipo(rst.getString("TIPO"));
+				armas.add(arma);
+			}
+			return armas;
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+		return null;
+	}
+
 }

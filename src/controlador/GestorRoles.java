@@ -35,11 +35,6 @@ public class GestorRoles {
 				break;
 			}
 			
-			
-			
-			
-			
-			
 		} while (opcion != Menu.SALIR);
 	}
 }
