@@ -58,7 +58,7 @@ public class GestorCaballeros {
 		if (estado_peticion=!true) {
 			Visor.mostrarMensaje("Cabllero con Id" + id_caballero + "Eliminado!");
 		} else {
-			Visor.mostrarMensaje("Error al borrar caballero de la base de datos desasiganr complementos al caballero antes de borrarlo");
+			Visor.mostrarMensaje("Error al borrar caballero recuerda quitar complementos al caballero para poder borrarlo");
 		}
 	}
 

@@ -25,9 +25,10 @@ public class Menu {
 	public static final int MODIFICAR_CABALLERO = 3;
 	public static final int ELIMINAR_CABALLERO = 4;
 	
-	public static final int CREAR_ESCUDO = 1;
-	public static final int MODIFICAR_ESCUDO = 2;
-	public static final int ELIMINAR_ESCUDO = 3;
+	public static final int VER_ESCUDOS = 1;
+	public static final int CREAR_ESCUDO = 2;
+	public static final int MODIFICAR_ESCUDO = 3;
+	public static final int ELIMINAR_ESCUDO = 4;
 	
 	public static final int VER_ARMAS = 1;
 	public static final int CREAR_ARMA = 2;
@@ -38,9 +39,9 @@ public class Menu {
 	public static final int MODIFICAR_CABALLO = 2;
 	public static final int ELIMINAR_CABALLO = 3;
 	
-	public static final int CREAR_ESCUDERO = 1;
-	public static final int MODIFICAR_ESCUDERO = 2;
-	public static final int ELIMINAR_ESCUDERO = 3;
+	public static final int CREAR_ESCUDERO = 2;
+	public static final int MODIFICAR_ESCUDERO = 3;
+	public static final int ELIMINAR_ESCUDERO = 4;
 	
 	public static void menuPrincipal() {
 		System.out.println(SALIR + ". SALIR.");
@@ -74,6 +75,7 @@ public class Menu {
 	}
 	public static void menuCrudEscudo() {
 		System.out.println(SALIR + ". SALIR.");
+		System.out.println(VER_ESCUDOS + ". VER ESCUDOS.");
 		System.out.println(CREAR_ESCUDO + ". CREAR ESCUDO.");
 		System.out.println(MODIFICAR_ESCUDO + ". MODIFICAR ESCUDO.");
 		System.out.println(ELIMINAR_ESCUDO + ". ELIMINAR ESCUDO.");

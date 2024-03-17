@@ -3,7 +3,7 @@ package modelo;
 public class Escudo {
 	private int id_escudos;
 	private String nombre;
-	private String nivel_defensa;
+	private int nivel_defensa;
 	public int getId_escudos() {
 		return id_escudos;
 	}
@@ -16,11 +16,11 @@ public class Escudo {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getNivel_defensa() {
+	public int getNivel_defensa() {
 		return nivel_defensa;
 	}
-	public void setNivel_defensa(String nivel_defensa) {
-		this.nivel_defensa = nivel_defensa;
+	public void setNivel_defensa(int i) {
+		this.nivel_defensa = i;
 	}
 	@Override
 	public String toString() {

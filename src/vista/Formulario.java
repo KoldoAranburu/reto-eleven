@@ -70,4 +70,11 @@ public class Formulario {
 		return caballero;
 	}
 
+	public static Escudo pedirNuevosDatosEscudo(Escudo escudo, Scanner scan) {
+		System.out.println("Inserte el nombre del escudo");
+		escudo.setNombre(scan.nextLine());
+		System.out.println("Inserte el Nivel del escudo");
+		escudo.setNivel_defensa(Integer.parseInt(scan.nextLine()));
+		return escudo;
+	}
 }

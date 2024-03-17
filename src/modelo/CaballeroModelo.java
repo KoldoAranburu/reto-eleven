@@ -65,5 +65,4 @@ public class CaballeroModelo {
 		}
 		return false;
 	}
-
 }

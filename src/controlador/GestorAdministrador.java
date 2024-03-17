@@ -35,7 +35,7 @@ public class GestorAdministrador {
 				//segundo Split
 				break;
 			case Menu.ADMINISTRAR_ESCUDOS:
-				//GestorEscudos.run();
+				GestorEscudos.run();
 				break;
 			default:
 				System.out.println("Opción incorrecta, intentelo de nuevo.");
