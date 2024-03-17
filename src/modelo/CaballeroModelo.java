@@ -45,6 +45,7 @@ public class CaballeroModelo {
 			prst.setInt(5, caballero.getId_escudo());
 			prst.setInt(6, caballero.getId_caballo());
 			prst.setInt(7, caballero.getId_arma());
+			prst.executeUpdate();
 			return true;
 		} catch (Exception e) {
 			System.out.println(e);
@@ -58,6 +59,53 @@ public class CaballeroModelo {
 			Conector conector = new Conector();
 			PreparedStatement prst = conector.conectar().prepareStatement(sql);
 			prst.setInt(1, id_caballero);
+			prst.executeUpdate();
+			return true;
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+		return false;
+	}
+
+	public static Caballero getCaballeroByID(int id_caballero, Caballero caballero) {
+		String sql = "SELECT * FROM caballeros WHERE caballeros.ID_CABALLERO = ?";
+		try {
+			Conector conector = new Conector();
+			PreparedStatement prst = conector.conectar().prepareStatement(sql);
+			prst.setInt(1, id_caballero);
+			ResultSet rst = prst.executeQuery();
+			if(rst.next()) {
+				caballero.setNombre(rst.getString("NOMBRE"));
+				caballero.setApellido(rst.getString("APELLIDO"));
+				caballero.setExperiencia(rst.getInt("EXPERIENCIA"));
+				caballero.setFuerza(rst.getInt("FUERZA"));
+				caballero.setId_arma(rst.getInt("ID_ARMA"));
+				caballero.setId_caballero(rst.getInt("ID_CABALLERO"));
+				caballero.setId_caballo(rst.getInt("ID_CABALLO"));
+				caballero.setId_escudo(rst.getInt("ID_ESCUDO"));
+				return caballero;
+			}else {
+				return null;
+			}
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+		return null;
+	}
+
+	public static boolean modificarCaballero(Caballero caballero) {
+		String sql = "UPDATE caballeros SET NOMBRE = ?, APELLIDO=?, FUERZA=?, EXPERIENCIA=?, ID_ESCUDO = ?, ID_CABALLO =?, ID_ARMA=? WHERE caballeros.ID_CABALLERO=?";
+		try {
+			Conector conector = new Conector();
+			PreparedStatement prst = conector.conectar().prepareStatement(sql);
+			prst.setString(1, caballero.getNombre());
+			prst.setString(2, caballero.getApellido());
+			prst.setInt(3, caballero.getFuerza());
+			prst.setInt(4, caballero.getExperiencia());
+			prst.setInt(5, caballero.getId_escudo());
+			prst.setInt(6, caballero.getId_caballo());
+			prst.setInt(7, caballero.getId_arma());
+			prst.setInt(8, caballero.getId_caballero());
 			prst.executeUpdate();
 			return true;
 		} catch (Exception e) {

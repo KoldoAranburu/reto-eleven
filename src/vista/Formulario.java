@@ -36,12 +36,13 @@ public class Formulario {
 		caballero.setExperiencia(Integer.parseInt(scan.nextLine()));
 		System.out.println("Introduzca el fuerza");
 		caballero.setFuerza(Integer.parseInt(scan.nextLine()));
-		System.out.println("Introduzca el id del arma");
-		caballero.setId_arma(Integer.parseInt(scan.nextLine()));
-		System.out.println("Introduzca el id del caballo");
-		caballero.setId_caballo(Integer.parseInt(scan.nextLine()));
-		System.out.println("Introduzca el id del escudo");
-		caballero.setId_escudo(Integer.parseInt(scan.nextLine()));
+	
+//		System.out.println("Introduzca el id del arma");
+//		caballero.setId_arma(Integer.parseInt(scan.nextLine()));
+//		System.out.println("Introduzca el id del caballo");
+//		caballero.setId_caballo(Integer.parseInt(scan.nextLine()));
+//		System.out.println("Introduzca el id del escudo");
+//		caballero.setId_escudo(Integer.parseInt(scan.nextLine()));
 		return caballero;
 	}
 
@@ -57,18 +58,7 @@ public class Formulario {
 		return caballero;
 	}
 
-	public static Caballero asignarComplementosCaballero(Scanner scan, Caballero caballero) {
-		System.out.println("Elija el id del arma a asignar");
-		caballero.setId_arma(Integer.parseInt(scan.nextLine()));
-		//ELEGIR la ID de los caballos Disponibles
-		System.out.println("Introduzca el id del caballo a asignar");
-		//ELEGIR la ID de las caballos Disponibles
-		caballero.setId_caballo(Integer.parseInt(scan.nextLine()));
-		System.out.println("Introduzca el id del escudo a asignar");
-		//ELEGIR la ID de los escudos Disponibles
-		caballero.setId_escudo(Integer.parseInt(scan.nextLine()));
-		return caballero;
-	}
+
 
 	public static Escudo pedirNuevosDatosEscudo(Escudo escudo, Scanner scan) {
 		System.out.println("Inserte el nombre del escudo");
@@ -76,5 +66,23 @@ public class Formulario {
 		System.out.println("Inserte el Nivel del escudo");
 		escudo.setNivel_defensa(Integer.parseInt(scan.nextLine()));
 		return escudo;
+	}
+
+	public static Caballero asignarArma(Scanner scan, Caballero caballero) {
+		System.out.println("Elija el id del arma a asignar");
+		caballero.setId_arma(Integer.parseInt(scan.nextLine()));
+		return caballero;
+	}
+
+	public static Caballero asignarEscudo(Scanner scan, Caballero caballero) {
+		System.out.println("Introduzca el id del escudo a asignar");
+		caballero.setId_escudo(Integer.parseInt(scan.nextLine()));
+		return caballero;
+	}
+
+	public static Caballero asignarCaballo(Caballero caballero, Scanner scan) {
+		System.out.println("Introduzca el id del caballo a asignar");
+		caballero.setId_caballo(Integer.parseInt(scan.nextLine()));
+		return caballero;
 	}
 }

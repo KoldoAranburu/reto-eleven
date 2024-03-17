@@ -100,4 +100,9 @@ public class GestorArmas {
 			Visor.mostrarArma(arma);
 		}
 	}
+
+	public static Arma getArma(int id_escudo) {
+		 
+		return ArmaModelo.getArmaByID(id_escudo);
+	}
 }

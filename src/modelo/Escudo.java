@@ -1,14 +1,14 @@
 package modelo;
 
 public class Escudo {
-	private int id_escudos;
+	private int id_escudo;
 	private String nombre;
 	private int nivel_defensa;
-	public int getId_escudos() {
-		return id_escudos;
+	public int getId_escudo() {
+		return id_escudo;
 	}
-	public void setId_escudos(int id_escudos) {
-		this.id_escudos = id_escudos;
+	public void setId_escudo(int id_escudos) {
+		this.id_escudo = id_escudos;
 	}
 	public String getNombre() {
 		return nombre;
@@ -24,7 +24,7 @@ public class Escudo {
 	}
 	@Override
 	public String toString() {
-		return "Escudo [id_escudos=" + id_escudos + ", nombre=" + nombre + ", nivel_defensa=" + nivel_defensa + "]";
+		return "Escudo [id_escudos=" + id_escudo + ", nombre=" + nombre + ", nivel_defensa=" + nivel_defensa + "]";
 	}
 	
 }

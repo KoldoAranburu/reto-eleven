@@ -98,4 +98,9 @@ public class GestorEscudos {
 		escudos=EscudoModelo.getEscudos(escudos);
 		Visor.mostrarEscudos(escudos);
 	}
+
+	public static Escudo getEscudo(int id_escudo) {
+		Escudo escudo = new Escudo();
+		return EscudoModelo.getEscudoByID(id_escudo, escudo);
+	}
 }

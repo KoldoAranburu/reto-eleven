@@ -59,8 +59,8 @@ public class Caballero {
 	}
 	@Override
 	public String toString() {
-		return "Caballero [nombre=" + nombre + ", apellido=" + apellido + ", fuerza=" + fuerza + ", experiencia="
-				+ experiencia + ", id_caballero=" + id_caballero + ", id_escudo=" + id_escudo + ", id_caballo="
+		return "Caballero [id_caballero=" + id_caballero + ", nombre=" + nombre + ", apellido=" + apellido + ", fuerza=" + fuerza + ", experiencia="
+				+ experiencia +  ", id_escudo=" + id_escudo + ", id_caballo="
 				+ id_caballo + ", id_arma=" + id_arma + "]";
 	}
 	
