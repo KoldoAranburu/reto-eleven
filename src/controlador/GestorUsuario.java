@@ -79,6 +79,8 @@ public class GestorUsuario {
 			Visor.mostrarMensaje("\n Has ganado caballero -> " + caballero.toString());
 		}else if(estocadaPJ1-estocadaPJ2<10) {
 			Visor.mostrarMensaje("Has perdido de manera alucinante contra -> " + caballero2.toString());
+		}else{
+			Visor.mostrarMensaje("Declaramos un EMPATE!");
 		}
 	}
 
