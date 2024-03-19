@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import modelo.Arma;
 import modelo.Caballero;
 import modelo.Caballo;
+import modelo.Escudero;
 import modelo.Escudo;
 
 public class Visor {
@@ -51,8 +52,21 @@ public class Visor {
 		}
 		
 	}
+
 	public static void mostrarCaballo(Caballo caballo) {
 		System.out.println(caballo);
 		
+	}
+
+
+	public static void mostrarEscuderos(ArrayList<Escudero> escuderos) {
+		for (Escudero escudero : escuderos) {
+			System.out.println(escudero);
+		}
+		
+	}
+
+	public static void mostrarEscudero(Escudero escudero) {
+		System.out.println(escudero);
 	}
 }
