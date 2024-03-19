@@ -1,7 +1,9 @@
 package modelo;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import com.mysql.cj.protocol.Resultset;
@@ -114,8 +116,21 @@ public class CaballeroModelo {
 		return false;
 	}
 
-	public static int subirBatalla(Caballero caballeroPJ1, Caballero caballeroPJ2) {
-		String sql = "INSERT INTO historial_batallas(ID_PJ1,ID_PJ2,GANADOR,FECHA) VALUES(?,?,?,?)";
-		return 0;
+	public static boolean subirBatalla(Caballero caballeroPJ1, Caballero caballeroPJ2, Caballero ganador, LocalDate fecha) {
+		String sql = "INSERT INTO historial_batallas(ID_PJ1,ID_PJ2,GANADOR,FECHA_BATALLA) VALUES(?,?,?,?)";
+		try {
+			Conector conector = new Conector();
+			PreparedStatement prst = conector.conectar().prepareStatement(sql);
+			prst.setInt(1, caballeroPJ1.getId_caballero());
+			prst.setInt(2, caballeroPJ2.getId_caballero());
+			prst.setInt(3, ganador.getId_caballero());
+			prst.setDate(4, Date.valueOf(fecha));
+			prst.executeUpdate();
+			return true;
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+		
+		return false;
 	}
 }

@@ -1,5 +1,6 @@
 package controlador;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -149,9 +150,9 @@ public class GestorCaballeros {
 		}
 		return caballeros;
 	}
-
-	public static int subirBatalla(Caballero caballeroPJ1, Caballero caballeroPJ2) {
-		int estado_peticion = CaballeroModelo.subirBatalla(caballeroPJ1,caballeroPJ2);
+	
+	public static boolean subirBatalla(Caballero caballeroPJ1, Caballero caballeroPJ2, Caballero ganador, LocalDate fecha) {
+		boolean estado_peticion = CaballeroModelo.subirBatalla(caballeroPJ1,caballeroPJ2,ganador,fecha);
 		return estado_peticion;
 	}
 }

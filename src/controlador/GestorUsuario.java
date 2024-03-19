@@ -1,6 +1,8 @@
 package controlador;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -42,7 +44,9 @@ public class GestorUsuario {
 		ArrayList<Caballero> caballeros = new ArrayList<Caballero>();
 		caballeros = GestorCaballeros.getCaballeros();
 		Random random = new Random();
-
+		LocalDate fecha = LocalDate.now();
+		
+		System.out.println(fecha);
 		Visor.mostrarMensaje("Elige personaje:");
 		int id_caballero = Formulario.pedirID(scan);
 
@@ -53,11 +57,25 @@ public class GestorUsuario {
 			caballeroPJ2= Batallar.getSecundoluchador(caballeros,random);
 		}
 		Visor.mostrarMensaje("Lucharas contra -> " + caballeroPJ2.toString() + "/t");
-		String resultado =  Batallar.luchar(caballeroPJ1.calcularFuerzaLucha(), caballeroPJ2.calcularFuerzaLucha(), caballeroPJ1, caballeroPJ2);
+		Caballero ganador =  Batallar.luchar(caballeroPJ1.calcularFuerzaLucha(), caballeroPJ2.calcularFuerzaLucha(), caballeroPJ1, caballeroPJ2);
 		
-		Visor.mostrarMensaje(resultado);
+		if (ganador.getId_caballero()==caballeroPJ1.getId_caballero()) {
+			Visor.mostrarMensaje("\n Has ganado caballero -> " + caballeroPJ1.toString());
+			
+		} else if(ganador.getId_caballero()==caballeroPJ2.getId_caballero()){
+			Visor.mostrarMensaje("Has perdido de manera alucinante contra -> " + caballeroPJ2.toString());
+			
+		}else {
+			Visor.mostrarMensaje("Declaramos un EMPATE!");
+		}
 		
-		int estado_peticion = GestorCaballeros.subirBatalla(caballeroPJ1,caballeroPJ2);
+		boolean estado_peticion = GestorCaballeros.subirBatalla(caballeroPJ1,caballeroPJ2,ganador,fecha);
+	
+		if (estado_peticion=!true) {
+			Visor.mostrarMensaje("Error 188: Fallo al Guardar Los Datos en La base de Datos");
+		} else {
+			Visor.mostrarMensaje("Battala Guardada en los Libros de la Historia");
+		}
 	}
 }
 
