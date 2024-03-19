@@ -26,6 +26,7 @@ public class CaballoModelo {
 		return null;
 	}
 
+	
 	public static ArrayList<Caballo> getCaballos(ArrayList<Caballo> caballos) {
 		String sql = "SELECT * FROM caballos";
 		try {
