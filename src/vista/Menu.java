@@ -35,9 +35,10 @@ public class Menu {
 	public static final int MODIFICAR_ARMA = 3;
 	public static final int ELIMINAR_ARMA = 4;
 	
-	public static final int CREAR_CABALLO = 1;
-	public static final int MODIFICAR_CABALLO = 2;
-	public static final int ELIMINAR_CABALLO = 3;
+	public static final int CREAR_CABALLO = 2;
+	public static final int MODIFICAR_CABALLO = 3;
+	public static final int ELIMINAR_CABALLO = 4;
+	public static final int VER_CABALLO = 1;
 	
 	public static final int CREAR_ESCUDERO = 2;
 	public static final int MODIFICAR_ESCUDERO = 3;
@@ -62,7 +63,7 @@ public class Menu {
 		System.out.println(ADMINISTRAR_CABALLEROS + ". ADMINISTRAR CABALLEROS.");
 		System.out.println(ADMINISTRAR_ESCUDOS + ". ADMINISTRAR ESCUDOS.");
 		System.out.println(ADMINISTRAR_ARMAS + ". ADMINISTRAR ARMAS.");
-		//System.out.println(ADMINISTRAR_CABALLOS+ ". ADMINISTRAR CABALLOS.");
+		System.out.println(ADMINISTRAR_CABALLOS+ ". ADMINISTRAR CABALLOS.");
 		//System.out.println(ADMINISTRAR_ESCUDEROS + ". ADMINISTRAR ESCUDEROS.");
 	}
 	public static void menuCrudCaballero() {
@@ -82,9 +83,11 @@ public class Menu {
 	}
 	public static void menuCrudCaballo() {
 		System.out.println(SALIR + ". SALIR.");
+		System.out.println(VER_CABALLO + ". VER CABALLO.");
 		System.out.println(CREAR_CABALLO + ". CREAR CABALLO.");
 		System.out.println(MODIFICAR_CABALLO + ". MODIFICAR CABALLO.");
 		System.out.println(ELIMINAR_CABALLO + ". ELIMINAR CABALLO.");
+		
 	}
 	public static void menuCrudArma() {
 		System.out.println(SALIR + ". SALIR.");

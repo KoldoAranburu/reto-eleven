@@ -85,4 +85,13 @@ public class Formulario {
 		caballero.setId_caballo(Integer.parseInt(scan.nextLine()));
 		return caballero;
 	}
+
+	public static Caballo pedirNuevosDatosCaballo(Caballo caballo, Scanner scan) {
+		System.out.println("Introduzca el color del caballo");
+		caballo.setColor(scan.nextLine());
+
+		System.out.println("Introduzca el nombre del caballo");
+		caballo.setNombre(scan.nextLine());
+		return caballo;
+	}
 }

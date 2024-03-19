@@ -51,4 +51,8 @@ public class Visor {
 		}
 		
 	}
+	public static void mostrarCaballo(Caballo caballo) {
+		System.out.println(caballo);
+		
+	}
 }
