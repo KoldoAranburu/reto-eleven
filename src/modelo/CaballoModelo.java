@@ -19,6 +19,8 @@ public class CaballoModelo {
 				caballo.setNombre(rst.getString("NOMBRE"));
 				caballos.add(caballo);
 			}
+			
+			conector.deconectar();
 			return caballos;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -40,6 +42,8 @@ public class CaballoModelo {
 				caballo.setNombre(rst.getString("NOMBRE"));
 				caballos.add(caballo);
 			}
+			
+			conector.deconectar();
 			return caballos;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -54,6 +58,8 @@ public class CaballoModelo {
 			PreparedStatement prst = conector.conectar().prepareStatement(sql);
 			prst.setInt(1, id_caballo);
 			prst.executeUpdate();
+			
+			conector.deconectar();
 			return true;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -73,6 +79,8 @@ public class CaballoModelo {
 				caballo.setId_caballo(rst.getInt("ID_CABALLO"));
 				caballo.setColor(rst.getString("COLOR"));
 				caballo.setNombre(rst.getString("NOMBRE"));
+				
+				conector.deconectar();
 				return caballo;
 			} else {
 				return null;
@@ -92,6 +100,8 @@ public class CaballoModelo {
 			prst.setString(1, caballo.getColor());
 			prst.setString(2, caballo.getNombre());
 			prst.setInt(3, caballo.getId_caballo());
+			
+			conector.deconectar();
 			prst.executeUpdate();
 			return true;
 		} catch (Exception e) {
@@ -108,6 +118,8 @@ public class CaballoModelo {
 			prst.setString(1, caballo.getColor());
 			prst.setString(2, caballo.getNombre());
 			prst.executeUpdate();
+			
+			conector.deconectar();
 			return true;
 		} catch (Exception e) {
 			System.err.println(e);

@@ -20,6 +20,8 @@ public class EscudoModelo extends Conector{
 				escudo.setNombre(rst.getString("NOMBRE"));
 				escudos.add(escudo);
 			}
+			
+			conector.deconectar();
 			return escudos;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -35,6 +37,8 @@ public class EscudoModelo extends Conector{
 			prst.setString(1, escudo.getNombre());
 			prst.setInt(2, escudo.getNivel_defensa());
 			prst.executeUpdate();
+			
+			conector.deconectar();
 			return true;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -53,6 +57,8 @@ public class EscudoModelo extends Conector{
 				escudo.setId_escudo(rst.getInt("ID_ESCUDO"));
 				escudo.setNivel_defensa(rst.getInt("NIVEL_DEFENSA"));
 				escudo.setNombre(rst.getString("NOMBRE"));
+				
+				conector.deconectar();
 				return escudo;
 			} else {
 				return null;
@@ -72,6 +78,8 @@ public class EscudoModelo extends Conector{
 			prst.setInt(2, escudo.getNivel_defensa());
 			prst.setInt(3, escudo.getId_escudo());
 			prst.executeUpdate();
+			
+			conector.deconectar();
 			return true;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -86,6 +94,8 @@ public class EscudoModelo extends Conector{
 			PreparedStatement prst = conector.conectar().prepareStatement(sql);
 			prst.setInt(1, id_escudo);
 			prst.executeUpdate();
+			
+			conector.deconectar();
 			return true;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -106,6 +116,8 @@ public class EscudoModelo extends Conector{
 				escudo.setNombre(rst.getString("NOMBRE"));
 				escudos.add(escudo);
 			}
+			
+			conector.deconectar();
 			return escudos;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -133,6 +145,8 @@ public class EscudoModelo extends Conector{
 				caballero.setId_escudo(rst.getInt("ID_ESCUDO"));
 				caballeros.add(caballero);
 			}
+			
+			conector.deconectar();
 			return caballeros;
 		} catch (Exception e) {
 			System.out.println(e);

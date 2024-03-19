@@ -28,6 +28,8 @@ public class CaballeroModelo {
 				caballero.setId_escudo(rst.getInt("ID_ESCUDO"));
 				caballeros.add(caballero);
 			}
+			
+			conector.deconectar();
 			return caballeros;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -48,6 +50,8 @@ public class CaballeroModelo {
 			prst.setInt(6, caballero.getId_caballo());
 			prst.setInt(7, caballero.getId_arma());
 			prst.executeUpdate();
+			
+			conector.deconectar();
 			return true;
 		} catch (Exception e) {
 			System.out.println(e);
@@ -62,6 +66,8 @@ public class CaballeroModelo {
 			PreparedStatement prst = conector.conectar().prepareStatement(sql);
 			prst.setInt(1, id_caballero);
 			prst.executeUpdate();
+			
+			conector.deconectar();
 			return true;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -85,6 +91,8 @@ public class CaballeroModelo {
 				caballero.setId_caballero(rst.getInt("ID_CABALLERO"));
 				caballero.setId_caballo(rst.getInt("ID_CABALLO"));
 				caballero.setId_escudo(rst.getInt("ID_ESCUDO"));
+				
+				conector.deconectar();
 				return caballero;
 			}else {
 				return null;
@@ -109,6 +117,8 @@ public class CaballeroModelo {
 			prst.setInt(7, caballero.getId_arma());
 			prst.setInt(8, caballero.getId_caballero());
 			prst.executeUpdate();
+			
+			conector.deconectar();
 			return true;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -126,6 +136,8 @@ public class CaballeroModelo {
 			prst.setInt(3, ganador.getId_caballero());
 			prst.setDate(4, Date.valueOf(fecha));
 			prst.executeUpdate();
+			
+			conector.deconectar();
 			return true;
 		} catch (Exception e) {
 			System.err.println(e);

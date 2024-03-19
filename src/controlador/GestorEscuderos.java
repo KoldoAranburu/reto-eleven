@@ -67,7 +67,12 @@ public class GestorEscuderos {
 			escudero = Formulario.pedirNuevosDatosEscudero(escudero,scan);
 			escudero.setId_caballero(GestorEscuderos.asignarCaballero(scan));
 			
-			Visor.mostrarMensaje("Escudero Actualizado Correctamente" + escudero.toString());
+			boolean estado_peticion = EscuderoModelo.modificarEscudero(escudero);
+			if (estado_peticion=!true) {
+				Visor.mostrarMensaje("Error al actualizar Escudero");
+			} else {
+				Visor.mostrarMensaje("Escudero Actualizado Correctamente" + escudero.toString());
+			}
 		}
 	}
 
@@ -95,6 +100,37 @@ public class GestorEscuderos {
 		Visor.mostrarMensaje("Introduzca el Id del caballero a elegir");
 		int id_caballero = Integer.parseInt(scan.nextLine());
 		return id_caballero;
+	}
+
+	public static Escudero getEscuderoByIDCaballero(int id_caballero) {
+		
+		return EscuderoModelo.getEscuderoByIDcaballero(id_caballero);
+	}
+
+	public static boolean subirExperienciaEscudero(Escudero escuderoPJ1) {
+		boolean estdo_peticion = EscuderoModelo.modificarEscudero(escuderoPJ1);
+		
+		return estdo_peticion;
+	}
+
+	public static void evolucionarEscudero(Caballero caballero) {
+		Escudero escudero = getEscuderoByIDCaballero(caballero.getId_caballero());
+		
+		int max_experiencia_caballero = 97;
+		
+		if (escudero.getExperiencia()>max_experiencia_caballero) {
+			
+			boolean estado_peticion = EscuderoModelo.evolucionarEscudero(escudero);
+			boolean estado_peticion2 = EscuderoModelo.eliminarEscuderoByID(escudero.getId_escudero());
+		
+			if (estado_peticion=! true && estado_peticion2==!true) {
+				Visor.mostrarMensaje("Error Al evolucionar al Escudero");
+			} else {
+				Visor.mostrarMensaje("Enhorabuena tu Escudero " + escudero.getNombre() + ", Ahora es un caballero mas de la mesa Redonda, ya que ha superado la Experiencia Maxima");
+			}			
+		} else {
+			Visor.mostrarMensaje("\t \n Tras la batalla los jueces han querido ascender al escudero " + escudero.toString() + ",  a caballero  pero todavia le falta experiencia para convertirse a un caballero !Animo");
+		}
 	}
 
 }

@@ -100,4 +100,11 @@ public class GestorArmas {
 		 
 		return ArmaModelo.getArmaByID(id_escudo);
 	}
+
+	public static ArrayList<Arma> getArmas() {
+		ArrayList<Arma> armas = new ArrayList<Arma>();
+		
+		return ArmaModelo.getArmasNoAsignadas(armas);
+	}
+
 }

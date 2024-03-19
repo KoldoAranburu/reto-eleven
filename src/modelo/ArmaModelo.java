@@ -17,6 +17,8 @@ public class ArmaModelo {
 			prst.setString(1, arma.getTipo());
 			prst.setInt(2, arma.getFuerza_ataque());
 			prst.executeUpdate();
+			
+			conector.deconectar();
 			return true;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -31,6 +33,8 @@ public class ArmaModelo {
 			PreparedStatement prst = conector.conectar().prepareStatement(sql);
 			prst.setInt(1, id_arma);
 			prst.executeUpdate();
+			
+			conector.deconectar();
 			return true;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -48,6 +52,8 @@ public class ArmaModelo {
 			prst.setInt(2, arma.getFuerza_ataque());
 			prst.setInt(3, arma.getId_arma());
 			prst.executeUpdate();
+			
+			conector.deconectar();
 			return true;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -67,6 +73,8 @@ public class ArmaModelo {
 				arma.setFuerza_ataque(rst.getInt("FUERZA_ATAQUE"));
 				arma.setId_arma(rst.getInt("ID_ARMA"));
 				arma.setTipo(rst.getString("TIPO"));
+				
+				conector.deconectar();
 				return arma;
 			} else {
 				return null;
@@ -90,6 +98,8 @@ public class ArmaModelo {
 				arma.setTipo(rst.getString("TIPO"));
 				armas.add(arma);
 			}
+			
+			conector.deconectar();
 			return armas;
 		} catch (Exception e) {
 			System.err.println(e);
@@ -110,6 +120,8 @@ public class ArmaModelo {
 				arma.setTipo(rst.getString("TIPO"));
 				armas.add(arma);
 			}
+			
+			conector.deconectar();
 			return armas;
 		} catch (Exception e) {
 			System.err.println(e);

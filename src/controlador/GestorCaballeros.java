@@ -144,6 +144,7 @@ public class GestorCaballeros {
 	public static ArrayList<Caballero> getCaballeros() {
 		ArrayList<Caballero> caballeros = new ArrayList<Caballero>();
 		caballeros = CaballeroModelo.getCaballeros(caballeros);
+		
 		if (caballeros == null) {
 			Visor.mostrarMensaje("Error al cargar los caballeros de la base de datos");
 		} else {
@@ -164,5 +165,13 @@ public class GestorCaballeros {
 	public static ArrayList<Caballero> getCaballerosNoAsignados() {
 
 		return EscudoModelo.getCaballerosNoAsignado();
+	}
+
+	public static void subirExperienciaCaballero(Caballero caballero) {
+		CaballeroModelo.modificarCaballero(caballero);		
+	}
+
+	public static void actualizarCaballero(Caballero caballeroPJ1) {
+		CaballeroModelo.modificarCaballero(caballeroPJ1);
 	}
 }

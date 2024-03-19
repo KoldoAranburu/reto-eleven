@@ -41,8 +41,10 @@ public class GestorUsuario {
 	}
 
 	private static void iniciarJuego(Scanner scan) {
-		ArrayList<Caballero> caballeros = new ArrayList<Caballero>();
-		caballeros = GestorCaballeros.getCaballeros();
+		
+		ArrayList<Caballero> caballeros = caballeros = GestorCaballeros.getCaballeros();
+		ArrayList<Arma> armas =  GestorArmas.getArmas();
+		
 		Random random = new Random();
 		LocalDate fecha = LocalDate.now();
 		
@@ -55,11 +57,20 @@ public class GestorUsuario {
 		if (caballeroPJ1.getId_caballero()==caballeroPJ2.getId_caballero()) {
 			caballeroPJ2= Batallar.getSecundoluchador(caballeros,random);
 		}
-		Visor.mostrarMensaje("Lucharas contra -> " + caballeroPJ2.toString() + "/t");
-		Caballero ganador =  Batallar.luchar(caballeroPJ1, caballeroPJ2);
+		Visor.mostrarMensaje("Lucharas contra -> " + caballeroPJ2.toString() + "\t");
+		Caballero ganador =  Batallar.luchar(caballeroPJ1, caballeroPJ2,armas);
 		
 		if (ganador.getId_caballero()==caballeroPJ1.getId_caballero()) {
 			Visor.mostrarMensaje("\n Has ganado caballero -> " + caballeroPJ1.toString());
+			
+			Visor.mostrarMensaje("\t \n -> HE AQUI LA RECOMPENSA DE LA BATALLA");
+			Visor.mostrarArmas(armas);
+			
+			Visor.mostrarMensaje("Elija el ID del arma");
+			int id_arma = Integer.parseInt(scan.nextLine());
+			
+			caballeroPJ1.setId_arma(id_arma);
+			GestorCaballeros.actualizarCaballero(caballeroPJ1);
 			
 		} else if(ganador.getId_caballero()==caballeroPJ2.getId_caballero()){
 			Visor.mostrarMensaje("Has perdido de manera alucinante contra -> " + caballeroPJ2.toString());
@@ -73,8 +84,14 @@ public class GestorUsuario {
 		if (estado_peticion=!true) {
 			Visor.mostrarMensaje("Error 188: Fallo al Guardar Los Datos en La base de Datos");
 		} else {
-			Visor.mostrarMensaje("Battala Guardada en los Libros de la Historia");
+			Visor.mostrarMensaje("Batala Guardada en los Libros de la Historia");
 		}
+		
+		
+		GestorEscuderos.evolucionarEscudero(ganador);
+		
+		
+		
 	}
 }
 
