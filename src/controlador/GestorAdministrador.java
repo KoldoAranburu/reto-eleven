@@ -27,7 +27,7 @@ public class GestorAdministrador {
 				//segundo Split
 				break;
 			case Menu.ADMINISTRAR_ESCUDEROS:
-				//segundo Split
+				GestorEscuderos.run();
 				break;
 			case Menu.ADMINISTRAR_ESCUDOS:
 				GestorEscudos.run();

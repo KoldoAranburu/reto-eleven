@@ -10,6 +10,7 @@ import modelo.Caballero;
 import modelo.CaballeroModelo;
 import modelo.Caballo;
 import modelo.CaballoModelo;
+import modelo.Conector;
 import modelo.Escudo;
 import modelo.EscudoModelo;
 import vista.Formulario;
@@ -158,5 +159,10 @@ public class GestorCaballeros {
 
 	public static Caballero getCaballero(int id_caballero, Caballero caballero) {
 		return CaballeroModelo.getCaballeroByID(id_caballero, caballero);
+	}
+
+	public static ArrayList<Caballero> getCaballerosNoAsignados() {
+
+		return EscudoModelo.getCaballerosNoAsignado();
 	}
 }

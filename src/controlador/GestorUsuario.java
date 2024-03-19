@@ -56,7 +56,7 @@ public class GestorUsuario {
 			caballeroPJ2= Batallar.getSecundoluchador(caballeros,random);
 		}
 		Visor.mostrarMensaje("Lucharas contra -> " + caballeroPJ2.toString() + "/t");
-		Caballero ganador =  Batallar.luchar(caballeroPJ1.calcularFuerzaLucha(), caballeroPJ2.calcularFuerzaLucha(), caballeroPJ1, caballeroPJ2);
+		Caballero ganador =  Batallar.luchar(caballeroPJ1, caballeroPJ2);
 		
 		if (ganador.getId_caballero()==caballeroPJ1.getId_caballero()) {
 			Visor.mostrarMensaje("\n Has ganado caballero -> " + caballeroPJ1.toString());

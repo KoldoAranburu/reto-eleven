@@ -112,4 +112,31 @@ public class EscudoModelo extends Conector{
 		}
 		return null;
 	}
+
+	public static ArrayList<Caballero> getCaballerosNoAsignado() {
+		
+		String sql = "SELECT * FROM caballeros WHERE caballeros.ID_CABALLERO NOT IN (SELECT a.ID_CABALLERO FROM escuderos A JOIN caballeros B ON A.ID_CABALLERO=b.ID_CABALLERO)";
+		ArrayList<Caballero> caballeros = new ArrayList<Caballero>();
+		try {
+			Conector conector = new Conector();
+			PreparedStatement prst = conector.conectar().prepareStatement(sql);
+			ResultSet rst = prst.executeQuery();
+			while(rst.next()) {
+				Caballero caballero = new Caballero();
+				caballero.setNombre(rst.getString("NOMBRE"));
+				caballero.setApellido(rst.getString("APELLIDO"));
+				caballero.setExperiencia(rst.getInt("EXPERIENCIA"));
+				caballero.setFuerza(rst.getInt("FUERZA"));
+				caballero.setId_arma(rst.getInt("ID_ARMA"));
+				caballero.setId_caballero(rst.getInt("ID_CABALLERO"));
+				caballero.setId_caballo(rst.getInt("ID_CABALLO"));
+				caballero.setId_escudo(rst.getInt("ID_ESCUDO"));
+				caballeros.add(caballero);
+			}
+			return caballeros;
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return null;
+	}
 }

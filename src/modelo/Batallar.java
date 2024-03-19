@@ -8,7 +8,7 @@ import vista.Visor;
 
 public class Batallar {
 	
-	public static Caballero luchar(int calculoFuerzaLuchaPJ1, int calculoFuerzaLuchaPJ2, Caballero caballero,
+	public static Caballero luchar(Caballero caballero,
 			Caballero caballero2) {
 		Random random = new Random();
 //		Cálculo de la Fuerza de lucha (FL): 
@@ -20,8 +20,8 @@ public class Batallar {
 //			FL1*random(1 , experiencia)  - FL2 * random(1, experiencia) < 10 por ejemplo  ->gana el Caballero 2
 //
 //			Si no es empate.
-		int estocadaPJ1 = calculoFuerzaLuchaPJ1*random.nextInt(1, caballero.getExperiencia());
-		int estocadaPJ2 = calculoFuerzaLuchaPJ2*random.nextInt(1, caballero2.getExperiencia());
+		int estocadaPJ1 = caballero.calcularFuerzaLucha()*random.nextInt(1, caballero.getExperiencia());
+		int estocadaPJ2 = caballero2.calcularFuerzaLucha()*random.nextInt(1, caballero2.getExperiencia());
 		
 		if (estocadaPJ1-estocadaPJ2>10) {
 			return caballero;

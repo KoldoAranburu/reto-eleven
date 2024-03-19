@@ -8,6 +8,7 @@ import modelo.Arma;
 import modelo.ArmaModelo;
 import modelo.Caballero;
 import modelo.Caballo;
+import modelo.Escudero;
 import modelo.Escudo;
 
 public class Formulario {
@@ -84,5 +85,19 @@ public class Formulario {
 		System.out.println("Introduzca el id del caballo a asignar");
 		caballero.setId_caballo(Integer.parseInt(scan.nextLine()));
 		return caballero;
+	}
+
+	public static Escudero pedirNuevosDatosEscudero(Escudero escudero, Scanner scan) {
+		
+		System.out.println("Introduzca el nombre");
+		escudero.setNombre(scan.nextLine());
+
+		System.out.println("Introduzca el apellido");
+		escudero.setApellido(scan.nextLine());
+		
+		
+		System.out.println("Introduzca el experiencia");
+		escudero.setExperiencia(Integer.parseInt(scan.nextLine()));
+		return escudero;
 	}
 }
