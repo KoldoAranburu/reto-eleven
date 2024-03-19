@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-03-2024 a las 12:42:52
+-- Tiempo de generación: 19-03-2024 a las 09:26:31
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -77,8 +77,10 @@ CREATE TABLE `caballeros` (
 --
 
 INSERT INTO `caballeros` (`NOMBRE`, `APELLIDO`, `FUERZA`, `EXPERIENCIA`, `ID_CABALLERO`, `ID_ESCUDO`, `ID_CABALLO`, `ID_ARMA`) VALUES
-('Guillermo ', 'de Montpellier', 380, 0, 1, 2, 2, 2),
-('Elena', 'de Valois', 420, 0, 2, 1, 1, 5);
+('Jose', 'Luis', 22, 6, 0, 3, 3, 1),
+('Guillermo ', 'de Montpellier', 380, 3, 1, 2, 2, 2),
+('Elena', 'De Valois', 430, 3, 2, 4, 4, 3),
+('Pedro', 'Del catillo', 270, 47, 5, 6, 1, 11);
 
 -- --------------------------------------------------------
 
@@ -99,7 +101,12 @@ CREATE TABLE `caballos` (
 INSERT INTO `caballos` (`ID_CABALLO`, `COLOR`, `NOMBRE`) VALUES
 (1, 'plateado', 'Trueno de Plata'),
 (2, 'negro', 'Viento Veloz'),
-(3, 'marron', 'Caballo basico');
+(3, 'marron', 'Caballo basico'),
+(4, 'negro', 'Luis Fonsi'),
+(5, 'Rosa', 'Barbie'),
+(6, 'Openhheimer', 'Marron'),
+(7, 'Rosa', 'Barbie'),
+(8, 'Barbie', 'Rosa');
 
 -- --------------------------------------------------------
 
@@ -146,7 +153,31 @@ INSERT INTO `escudos` (`ID_ESCUDO`, `NOMBRE`, `NIVEL_DEFENSA`) VALUES
 (4, 'Escudo escocés', 75),
 (5, 'Escudo vikingo', 95),
 (6, 'Escudo basico', 10),
-(7, 'Escudo basico', 50);
+(7, 'Escudo basico', 50),
+(10, 'Mata Demonios', 65);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `historial_batallas`
+--
+
+CREATE TABLE `historial_batallas` (
+  `ID_PJ1` int(11) NOT NULL,
+  `ID_PJ2` int(11) NOT NULL,
+  `GANADOR` int(11) NOT NULL,
+  `FECHA_BATALLA` date DEFAULT NULL,
+  `ID_BATALLA` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `historial_batallas`
+--
+
+INSERT INTO `historial_batallas` (`ID_PJ1`, `ID_PJ2`, `GANADOR`, `FECHA_BATALLA`, `ID_BATALLA`) VALUES
+(1, 2, 1, '2024-03-18', 1),
+(2, 5, 5, '2024-03-19', 2),
+(0, 5, 5, '2024-03-19', 3);
 
 --
 -- Índices para tablas volcadas
@@ -187,6 +218,15 @@ ALTER TABLE `escudos`
   ADD PRIMARY KEY (`ID_ESCUDO`);
 
 --
+-- Indices de la tabla `historial_batallas`
+--
+ALTER TABLE `historial_batallas`
+  ADD PRIMARY KEY (`ID_BATALLA`,`ID_PJ2`) USING BTREE,
+  ADD KEY `FK_GANADOR` (`GANADOR`),
+  ADD KEY `FK_HB` (`ID_PJ2`,`ID_PJ1`) USING BTREE,
+  ADD KEY `FK_PJ1` (`ID_PJ1`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -200,13 +240,13 @@ ALTER TABLE `armas`
 -- AUTO_INCREMENT de la tabla `caballeros`
 --
 ALTER TABLE `caballeros`
-  MODIFY `ID_CABALLERO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_CABALLERO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `caballos`
 --
 ALTER TABLE `caballos`
-  MODIFY `ID_CABALLO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_CABALLO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `escuderos`
@@ -218,7 +258,13 @@ ALTER TABLE `escuderos`
 -- AUTO_INCREMENT de la tabla `escudos`
 --
 ALTER TABLE `escudos`
-  MODIFY `ID_ESCUDO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID_ESCUDO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `historial_batallas`
+--
+ALTER TABLE `historial_batallas`
+  MODIFY `ID_BATALLA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
@@ -237,6 +283,16 @@ ALTER TABLE `caballeros`
 --
 ALTER TABLE `escuderos`
   ADD CONSTRAINT `escuderos_ibfk_1` FOREIGN KEY (`ID_CABALLERO`) REFERENCES `caballeros` (`ID_CABALLERO`);
+
+--
+-- Filtros para la tabla `historial_batallas`
+--
+ALTER TABLE `historial_batallas`
+  ADD CONSTRAINT `FK_GANADOR` FOREIGN KEY (`GANADOR`) REFERENCES `caballeros` (`ID_CABALLERO`),
+  ADD CONSTRAINT `FK_HB` FOREIGN KEY (`ID_PJ2`) REFERENCES `caballeros` (`ID_CABALLERO`),
+  ADD CONSTRAINT `FK_HB_CB_PJ1` FOREIGN KEY (`ID_PJ1`) REFERENCES `caballeros` (`ID_CABALLERO`),
+  ADD CONSTRAINT `FK_HB_CB_PJ2` FOREIGN KEY (`ID_PJ2`) REFERENCES `caballeros` (`ID_CABALLERO`),
+  ADD CONSTRAINT `FK_PJ1` FOREIGN KEY (`ID_PJ1`) REFERENCES `caballeros` (`ID_CABALLERO`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
