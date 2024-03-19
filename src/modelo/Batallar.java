@@ -3,6 +3,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.Random;
 
+import controlador.GestorCaballeros;
 import vista.Visor;
 
 public class Batallar {
@@ -31,13 +32,9 @@ public class Batallar {
 		}
 	}
 	
-	public static Caballero getPrimerLuchador(ArrayList<Caballero> caballeros, int id_caballero) {
-		for (Caballero caballero : caballeros) {
-			if (caballero.getId_caballero() == id_caballero) {
-				return caballero;
-			}
-		}
-		return null;	
+	public static Caballero getPrimerLuchador(int id_caballero) {
+		Caballero caballero = GestorCaballeros.getCaballero(id_caballero,new Caballero());
+		return caballero;	
 	}
 	
 	public static Caballero getSecundoluchador(ArrayList<Caballero> caballeros, Random random) {

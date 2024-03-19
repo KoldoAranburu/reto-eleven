@@ -46,11 +46,10 @@ public class GestorUsuario {
 		Random random = new Random();
 		LocalDate fecha = LocalDate.now();
 		
-		System.out.println(fecha);
 		Visor.mostrarMensaje("Elige personaje:");
 		int id_caballero = Formulario.pedirID(scan);
 
-		Caballero caballeroPJ1= Batallar.getPrimerLuchador(caballeros,id_caballero);
+		Caballero caballeroPJ1= Batallar.getPrimerLuchador(id_caballero);
 		Caballero caballeroPJ2= Batallar.getSecundoluchador(caballeros,random);
 		
 		if (caballeroPJ1.getId_caballero()==caballeroPJ2.getId_caballero()) {

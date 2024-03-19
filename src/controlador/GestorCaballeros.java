@@ -155,4 +155,8 @@ public class GestorCaballeros {
 		boolean estado_peticion = CaballeroModelo.subirBatalla(caballeroPJ1,caballeroPJ2,ganador,fecha);
 		return estado_peticion;
 	}
+
+	public static Caballero getCaballero(int id_caballero, Caballero caballero) {
+		return CaballeroModelo.getCaballeroByID(id_caballero, caballero);
+	}
 }
