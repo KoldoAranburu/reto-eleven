@@ -5,11 +5,6 @@ import java.util.Scanner;
 import vista.Menu;
 
 public class GestorAdministrador {
-	private static void main(String[] args) {
-
-		run();
-
-	}
 
 	public static void run() {
 		Scanner scan = new Scanner(System.in);

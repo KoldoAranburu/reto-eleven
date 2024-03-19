@@ -113,4 +113,9 @@ public class CaballeroModelo {
 		}
 		return false;
 	}
+
+	public static int subirBatalla(Caballero caballeroPJ1, Caballero caballeroPJ2) {
+		String sql = "INSERT INTO historial_batallas(ID_PJ1,ID_PJ2,GANADOR,FECHA) VALUES(?,?,?,?)";
+		return 0;
+	}
 }

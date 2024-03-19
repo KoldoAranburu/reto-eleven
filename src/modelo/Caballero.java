@@ -1,5 +1,8 @@
 package modelo;
 
+import controlador.GestorArmas;
+import controlador.GestorEscudos;
+
 public class Caballero {
 	private String nombre;
 	private String apellido;
@@ -56,6 +59,17 @@ public class Caballero {
 	}
 	public void setId_arma(int id_arma) {
 		this.id_arma = id_arma;
+	}
+	public int calcularFuerzaLucha() {
+		
+		Arma arma = new Arma();
+		Escudo escudo = new Escudo();
+		arma = GestorArmas.getArma(id_arma);
+		escudo = GestorEscudos.getEscudo(id_escudo);
+
+		int fuerza_lucha_PJ = fuerza+ arma.getFuerza_ataque() + escudo.getNivel_defensa();
+		
+		return fuerza_lucha_PJ;
 	}
 	@Override
 	public String toString() {

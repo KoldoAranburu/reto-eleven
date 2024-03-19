@@ -10,12 +10,7 @@ import vista.Menu;
 import vista.Visor;
 
 public class GestorEscudos {
-	private static void main(String[] args) {
-
-		run();
-
-	}
-
+	
 	public static void run() {
 		Scanner scan = new Scanner(System.in);
 		int opcion;

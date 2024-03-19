@@ -10,11 +10,6 @@ import vista.Menu;
 import vista.Visor;
 
 public class GestorArmas {
-	private static void main(String[] args) {
-
-		run();
-
-	}
 
 	public static void run() {
 		Scanner scan = new Scanner(System.in);

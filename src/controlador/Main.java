@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import vista.Menu;
 
-public class GestorRoles {
+public class Main {
 
 	public static void main(String[] args) {
 

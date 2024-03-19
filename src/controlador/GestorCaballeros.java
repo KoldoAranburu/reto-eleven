@@ -16,14 +16,8 @@ import vista.Menu;
 import vista.Visor;
 
 public class GestorCaballeros {
-
-	private static void main(String[] args) {
-
-		run();
-
-	}
-
 	public static void run() {
+		
 		Scanner scan = new Scanner(System.in);
 		int opcion;
 
@@ -154,5 +148,10 @@ public class GestorCaballeros {
 			Visor.mostrarCaballeros(caballeros);
 		}
 		return caballeros;
+	}
+
+	public static int subirBatalla(Caballero caballeroPJ1, Caballero caballeroPJ2) {
+		int estado_peticion = CaballeroModelo.subirBatalla(caballeroPJ1,caballeroPJ2);
+		return estado_peticion;
 	}
 }
