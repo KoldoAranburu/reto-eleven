@@ -12,6 +12,7 @@ public class GestorAdministrador {
 		
 		do {
 			Menu.menuAdministrador();
+			
 			opcion = Integer.parseInt(scan.nextLine());
 			switch (opcion) {
 			case Menu.SALIR:
