@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-03-2024 a las 09:26:31
+-- Tiempo de generación: 20-03-2024 a las 12:28:04
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -77,10 +77,12 @@ CREATE TABLE `caballeros` (
 --
 
 INSERT INTO `caballeros` (`NOMBRE`, `APELLIDO`, `FUERZA`, `EXPERIENCIA`, `ID_CABALLERO`, `ID_ESCUDO`, `ID_CABALLO`, `ID_ARMA`) VALUES
-('Jose', 'Luis', 22, 6, 0, 3, 3, 1),
-('Guillermo ', 'de Montpellier', 380, 3, 1, 2, 2, 2),
-('Elena', 'De Valois', 430, 3, 2, 4, 4, 3),
-('Pedro', 'Del catillo', 270, 47, 5, 6, 1, 11);
+('Jose', 'Luis', 22, 21, 0, 3, 3, 1),
+('Guillermo ', 'de Montpellier', 380, 273, 1, 2, 2, 12),
+('Elena', 'De Valois', 430, 48, 2, 4, 4, 3),
+('Pedro', 'Del catillo', 270, 62, 5, 6, 1, 11),
+('Luka', 'Montwuemado', 500, 100, 6, 7, 5, 6),
+('Luis', 'De Congora', 22, 137, 11, 1, 6, 14);
 
 -- --------------------------------------------------------
 
@@ -127,8 +129,12 @@ CREATE TABLE `escuderos` (
 --
 
 INSERT INTO `escuderos` (`ID_ESCUDERO`, `NOMBRE`, `APELLIDO`, `EXPERIENCIA`, `ID_CABALLERO`) VALUES
-(4, 'Pedro ', 'el Valiente', 0, 2),
-(5, 'Diego ', 'el Audaz ', 0, 1);
+(18, 'Pablo', 'Antero', 30, 1),
+(19, 'Raul', 'Arbiol', 5, 2),
+(25, 'Jose', 'Luis', 30, 0),
+(26, 'Poortus', 'Just', 5, 5),
+(27, 'Pintus', 'Oblack', 5, 6),
+(28, 'Luis', 'De gongora', 20, 11);
 
 -- --------------------------------------------------------
 
@@ -177,7 +183,41 @@ CREATE TABLE `historial_batallas` (
 INSERT INTO `historial_batallas` (`ID_PJ1`, `ID_PJ2`, `GANADOR`, `FECHA_BATALLA`, `ID_BATALLA`) VALUES
 (1, 2, 1, '2024-03-18', 1),
 (2, 5, 5, '2024-03-19', 2),
-(0, 5, 5, '2024-03-19', 3);
+(0, 5, 5, '2024-03-19', 3),
+(5, 0, 5, '2024-03-19', 4),
+(6, 5, 6, '2024-03-19', 5),
+(2, 1, 1, '2024-03-19', 6),
+(0, 5, 5, '2024-03-19', 7),
+(2, 1, 2, '2024-03-19', 8),
+(2, 0, 2, '2024-03-19', 9),
+(5, 0, 5, '2024-03-19', 10),
+(0, 1, 0, '2024-03-19', 11),
+(2, 0, 2, '2024-03-19', 12),
+(1, 0, 0, '2024-03-19', 13),
+(1, 2, 2, '2024-03-19', 14),
+(1, 0, 0, '2024-03-19', 15),
+(1, 0, 0, '2024-03-19', 16),
+(1, 1, 1, '2024-03-19', 17),
+(1, 0, 1, '2024-03-19', 18),
+(1, 2, 2, '2024-03-19', 19),
+(1, 0, 1, '2024-03-19', 20),
+(1, 0, 1, '2024-03-19', 21),
+(1, 5, 1, '2024-03-19', 22),
+(1, 5, 1, '2024-03-19', 23),
+(1, 5, 1, '2024-03-19', 24),
+(1, 6, 1, '2024-03-19', 25),
+(1, 5, 1, '2024-03-19', 26),
+(1, 6, 6, '2024-03-19', 27),
+(1, 5, 1, '2024-03-19', 28),
+(1, 0, 1, '2024-03-19', 29),
+(1, 6, 1, '2024-03-19', 30),
+(1, 5, 1, '2024-03-19', 31),
+(1, 2, 1, '2024-03-19', 32),
+(1, 6, 1, '2024-03-19', 33),
+(1, 2, 1, '2024-03-19', 34),
+(1, 6, 1, '2024-03-20', 35),
+(1, 2, 1, '2024-03-20', 36),
+(11, 6, 11, '2024-03-20', 37);
 
 --
 -- Índices para tablas volcadas
@@ -240,7 +280,7 @@ ALTER TABLE `armas`
 -- AUTO_INCREMENT de la tabla `caballeros`
 --
 ALTER TABLE `caballeros`
-  MODIFY `ID_CABALLERO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_CABALLERO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `caballos`
@@ -252,7 +292,7 @@ ALTER TABLE `caballos`
 -- AUTO_INCREMENT de la tabla `escuderos`
 --
 ALTER TABLE `escuderos`
-  MODIFY `ID_ESCUDERO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_ESCUDERO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `escudos`
@@ -264,7 +304,7 @@ ALTER TABLE `escudos`
 -- AUTO_INCREMENT de la tabla `historial_batallas`
 --
 ALTER TABLE `historial_batallas`
-  MODIFY `ID_BATALLA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_BATALLA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- Restricciones para tablas volcadas

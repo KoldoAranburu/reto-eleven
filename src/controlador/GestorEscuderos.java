@@ -129,7 +129,7 @@ public class GestorEscuderos {
 				Visor.mostrarMensaje("Enhorabuena tu Escudero " + escudero.getNombre() + ", Ahora es un caballero mas de la mesa Redonda, ya que ha superado la Experiencia Maxima");
 			}			
 		} else {
-			Visor.mostrarMensaje("\t \n Tras la batalla los jueces han querido ascender al escudero " + escudero.toString() + ",  a caballero  pero todavia le falta experiencia para convertirse a un caballero !Animo");
+			Visor.mostrarMensaje("\t \n Tras la batalla los jueces han querido ascender al escudero " + escudero.getNombre() + ",  a caballero  pero todavia le falta experiencia para convertirse a un caballero !Animo");
 		}
 	}
 
