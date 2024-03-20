@@ -1,3 +1,9 @@
+/*
+  Los metodos que son publicos con para permitir la comunicacion entre los diferentes gestores
+  ya que cda Gestor gestiona su clase y sus Atributos
+*/
+
+
 package controlador;
 
 import java.util.ArrayList;

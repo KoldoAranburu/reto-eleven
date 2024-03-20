@@ -1,3 +1,19 @@
+/*
+    Los gestores tiene un menu para poder realizar las operaciones CRUD
+    y hace uso de la clase "Ej: CaballeroModelo" para para hacer las 
+    operaciones CRUD usando el gestor solo para recoger los inputs 
+    del cliente por pantalla y llamando a su clase correspondiente que
+    Hcae la conexion de la Base de datos con la sentencia y devuelve "True"
+    si se ha completado la sentencia y "FALSE" si ha encontrado un error
+*/
+
+
+/*
+  Los metodos que son publicos con para permitir la comunicacion entre los diferentes gestores
+  ya que cda Gestor gestiona su clase y sus Atributos
+*/
+
+
 package controlador;
 
 import java.util.ArrayList;

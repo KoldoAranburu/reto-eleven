@@ -1,3 +1,16 @@
+/*
+	El GestorAdministrador se usa para Mostrar las diferentes opciones que  que tiene 
+	un administrador de la aplicaccion cuando, dando al cliente la posibilidad de poder Gestionar
+	las altas bajas modificaciones de las tablas en la Base de datos, haciendo de puente entre
+	los gestores para los caballeros,Armas,caballos y escuderos
+*/
+
+
+/*
+  Los metodos que son publicos con para permitir la comunicacion entre los diferentes gestores
+  ya que cda Gestor gestiona su clase y sus Atributos
+*/
+
 package controlador;
 
 import java.util.Scanner;

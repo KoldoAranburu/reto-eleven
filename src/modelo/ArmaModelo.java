@@ -1,3 +1,12 @@
+/*
+  Se usa la Extension de SQL en java, que nos permite conectarnos con
+  con una base de datos relacional y nos permite ejecutar sentencias DDL y DML en java.
+  * En la clase conector que tenemos solo es posible conectarse a la base de datos
+  cuando ejecutas su constructor ya que toda la configuracion necesaria para establecer la conexion a la base de 
+  datos.
+*/
+
+
 package modelo;
 
 import java.sql.Connection;
