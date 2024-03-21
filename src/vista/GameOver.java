@@ -48,7 +48,7 @@ public class GameOver {
 		frame.getContentPane().setForeground(new Color(64, 0, 128));
 		frame.getContentPane().setLayout(null);
 
-		ImageIcon icon = new ImageIcon("C:\\Users\\plaiaundi\\Documents\\GitHub\\eh_garden\\Reto-Eleven2\\img\\pantalla_inicio3.jpg"); 
+		ImageIcon icon = new ImageIcon("img/pantalla_inicio3.jpg"); 
         Image image = icon.getImage();
         Image scaledImage = image.getScaledInstance(981, 507, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
