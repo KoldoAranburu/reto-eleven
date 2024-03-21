@@ -46,10 +46,18 @@ public class GestorAdministrador {
 			case Menu.ADMINISTRAR_ESCUDOS:
 				GestorEscudos.run();
 				break;
+			case Menu.VERHISTORIALBATALLAS:
+				verHistorialBatallas();
+				break;
 			default:
 				System.out.println("Opción incorrecta, intentelo de nuevo.");
 				break;
 			}
 		} while (opcion != Menu.SALIR);
+	}
+
+	private static void verHistorialBatallas() {
+		// TODO Auto-generated method stub
+		
 	}
 }

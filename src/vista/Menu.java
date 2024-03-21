@@ -18,6 +18,7 @@ public class Menu {
 	public static final int ADMINISTRAR_ARMAS = 3;
 	public static final int ADMINISTRAR_CABALLOS = 4;
 	public static final int ADMINISTRAR_ESCUDEROS = 5;
+	public static final int VERHISTORIALBATALLAS = 6;
 	
 	//MENÚ DE CRUD
 	public static final int VER_CABALLERO = 1;
@@ -44,6 +45,7 @@ public class Menu {
 	public static final int CREAR_ESCUDERO = 2;
 	public static final int MODIFICAR_ESCUDERO = 3;
 	public static final int ELIMINAR_ESCUDERO = 4;
+
 	
 	public static void menuPrincipal() {
 		System.out.println(SALIR + ". SALIR.");
@@ -66,6 +68,7 @@ public class Menu {
 		System.out.println(ADMINISTRAR_ARMAS + ". ADMINISTRAR ARMAS.");
 		System.out.println(ADMINISTRAR_CABALLOS+ ". ADMINISTRAR CABALLOS.");
 		System.out.println(ADMINISTRAR_ESCUDEROS + ". ADMINISTRAR ESCUDEROS.");
+//		System.out.println(VERHISTORIALBATALLAS + ". VER HISTORIAL BATALLAS.");
 	}
 	public static void menuCrudCaballero() {
 		System.out.println(SALIR + ". SALIR.");
