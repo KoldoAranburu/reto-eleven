@@ -14,6 +14,7 @@
 
 package controlador;
 
+import java.awt.EventQueue;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
@@ -25,6 +26,8 @@ import modelo.Batallar;
 import modelo.Caballero;
 import modelo.Escudo;
 import vista.Formulario;
+import vista.GameOver;
+import vista.GanadorGUI;
 import vista.Menu;
 import vista.Visor;
 
@@ -44,7 +47,7 @@ public class GestorUsuario {
 				System.out.println("Saliendo...");
 				break;
 			case Menu.INICIAR_JUEGO:
-				iniciarJuego(scan);
+				iniciarJuego();
 				break;
 			default:
 				System.out.println("Opción incorrecta, intentelo de nuevo.");
@@ -54,8 +57,8 @@ public class GestorUsuario {
 
 	}
 
-	private static void iniciarJuego(Scanner scan) {
-		
+	public static void iniciarJuego() {
+		Scanner scan = new Scanner(System.in);
 		ArrayList<Caballero> caballeros = caballeros = GestorCaballeros.getCaballeros();
 		ArrayList<Arma> armas =  GestorArmas.getArmas();
 		
@@ -104,8 +107,61 @@ public class GestorUsuario {
 		
 		GestorEscuderos.evolucionarEscudero(ganador);
 		
+	}
+
+	public static ArrayList<Arma> batallarGUI(Caballero caballeroPJ1, ArrayList<Caballero> caballeros) {
+		Scanner scan = new Scanner(System.in);
+		ArrayList<Arma> armas =  GestorArmas.getArmas();
 		
+		Random random = new Random();
+		LocalDate fecha = LocalDate.now();
+
+		Caballero caballeroPJ2= Batallar.getSecundoluchador(caballeros,random);
 		
+		if (caballeroPJ1.getId_caballero()==caballeroPJ2.getId_caballero()) {
+			caballeroPJ2= Batallar.getSecundoluchador(caballeros,random);
+		}
+		Visor.mostrarMensaje("Lucharas contra -> " + caballeroPJ2.toString() + "\t");
+		Caballero ganador =  Batallar.luchar(caballeroPJ1, caballeroPJ2,armas);
+		
+		if (ganador.getId_caballero()==caballeroPJ1.getId_caballero()) {
+			Visor.mostrarMensaje("\n Has ganado caballero -> " + caballeroPJ1.toString());
+			
+			Visor.mostrarMensaje("\t \n -> HE AQUI LA RECOMPENSA DE LA BATALLA");
+			Visor.mostrarArmas(armas);
+			
+			Visor.mostrarMensaje("Elija el ID del arma");
+			GanadorGUI.mostarLoot(caballeroPJ1,armas);
+			return armas;
+			
+		} else if(ganador.getId_caballero()==caballeroPJ2.getId_caballero()){
+			Visor.mostrarMensaje("Has perdido de manera alucinante contra -> " + caballeroPJ2.toString());
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						GameOver window = new GameOver();
+						window.frame.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
+			
+		}else {
+			Visor.mostrarMensaje("Declaramos un EMPATE!");
+		}
+		
+		boolean estado_peticion = GestorCaballeros.subirBatalla(caballeroPJ1,caballeroPJ2,ganador,fecha);
+		
+		if (estado_peticion=!true) {
+			Visor.mostrarMensaje("Error 188: Fallo al Guardar Los Datos en La base de Datos");
+		} else {
+			Visor.mostrarMensaje("Batala Guardada en los Libros de la Historia");
+		}
+		
+		return null;
+		
+
 	}
 }
 
