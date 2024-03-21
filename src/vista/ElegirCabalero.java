@@ -89,7 +89,7 @@ public class ElegirCabalero {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\plaiaundi\\Documents\\GitHub\\eh_garden\\Reto-Eleven2\\img\\chose.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon("img/chose.jpg"));
 		lblNewLabel_1.setBounds(10, 11, 927, 26);
 		panel.add(lblNewLabel_1);
 		
@@ -231,7 +231,7 @@ public class ElegirCabalero {
 		}else {
 			i++;
 		}
-		imagen_caballero.setIcon(new ImageIcon("C:\\Users\\plaiaundi\\Documents\\GitHub\\eh_garden\\Reto-Eleven2\\img\\" + i +".png"));
+		imagen_caballero.setIcon(new ImageIcon("img/" + i +".png"));
 		NOMBRE.setText(caballeros.get(i).getNombre());
 		FUERZA.setText(String.valueOf(caballeros.get(i).getFuerza()));
 		experienciaTXT.setText(String.valueOf(caballeros.get(i).getExperiencia()));
@@ -239,11 +239,11 @@ public class ElegirCabalero {
 	}
 	private void pasarAlAnterior() {
 		if (i<=0) {
-			i=0;
+			i=caballeros.size()-1;
 		}else {
 			i--;
 		}
-		imagen_caballero.setIcon(new ImageIcon("C:\\Users\\plaiaundi\\Documents\\GitHub\\eh_garden\\Reto-Eleven2\\img\\" + i +".png"));
+		imagen_caballero.setIcon(new ImageIcon("img/" + i +".png"));
 		NOMBRE.setText(caballeros.get(i).getNombre());
 		FUERZA.setText(String.valueOf(caballeros.get(i).getFuerza()));
 		experienciaTXT.setText(String.valueOf(caballeros.get(i).getExperiencia()));

@@ -67,7 +67,7 @@ public class GanadorGUI {
 		frame = new JFrame();
 		
 		 
-		ImageIcon icon = new ImageIcon("C:\\Users\\plaiaundi\\Documents\\GitHub\\eh_garden\\Reto-Eleven2\\img\\pantalla_inicio2.jpg"); 
+		ImageIcon icon = new ImageIcon("img/pantalla_inicio2.jpg"); 
         Image image = icon.getImage();
         Image scaledImage = image.getScaledInstance(981, 600, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(scaledImage);

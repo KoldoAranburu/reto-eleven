@@ -61,7 +61,7 @@ public class IniciarJuegoGUI {
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
 
-		ImageIcon icon = new ImageIcon("C:\\Users\\plaiaundi\\Documents\\GitHub\\eh_garden\\Reto-Eleven2\\img\\pantalla_inicio.jpg"); // Reemplaza "ruta/de/la/imagen/fondo.jpg" por la ruta de tu imagen
+		ImageIcon icon = new ImageIcon("img/pantalla_inicio.jpg"); // Reemplaza "ruta/de/la/imagen/fondo.jpg" por la ruta de tu imagen
         Image image = icon.getImage();
         Image scaledImage = image.getScaledInstance(981, 507, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
