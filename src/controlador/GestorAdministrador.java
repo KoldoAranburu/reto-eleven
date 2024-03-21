@@ -13,8 +13,10 @@
 
 package controlador;
 
+import java.awt.EventQueue;
 import java.util.Scanner;
 
+import vista.IniciarJuegoGUI;
 import vista.Menu;
 
 public class GestorAdministrador {
@@ -46,8 +48,8 @@ public class GestorAdministrador {
 			case Menu.ADMINISTRAR_ESCUDOS:
 				GestorEscudos.run();
 				break;
-			case Menu.VERHISTORIALBATALLAS:
-				verHistorialBatallas();
+			case Menu.JUGAR:
+				GestorUsuario.run();
 				break;
 			default:
 				System.out.println("Opción incorrecta, intentelo de nuevo.");
@@ -56,8 +58,4 @@ public class GestorAdministrador {
 		} while (opcion != Menu.SALIR);
 	}
 
-	private static void verHistorialBatallas() {
-		// TODO Auto-generated method stub
-		
-	}
 }

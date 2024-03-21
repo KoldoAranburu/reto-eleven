@@ -28,6 +28,7 @@ import modelo.Escudo;
 import vista.Formulario;
 import vista.GameOver;
 import vista.GanadorGUI;
+import vista.IniciarJuegoGUI;
 import vista.Menu;
 import vista.Visor;
 
@@ -37,7 +38,19 @@ public class GestorUsuario {
 	public static void run() {
 		Scanner scan = new Scanner(System.in);
 		int opcion;
-
+		
+		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					IniciarJuegoGUI window = new IniciarJuegoGUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
 		do {
 			Menu.menuUsuario();
 			opcion = Integer.parseInt(scan.nextLine());
